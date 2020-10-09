@@ -9,7 +9,7 @@ The following guide is followed for creation of application strucuture.
 Use the package manager npm to install **cad-br**
 
 ```bash
-npm install cad-br
+npm install @bsjaramillo/cad-br
 ```
 
 ## Usage

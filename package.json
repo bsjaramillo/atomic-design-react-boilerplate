@@ -1,10 +1,10 @@
 {
-  "name": "@bsjaramillo/create-project",
+  "name": "@bsjaramillo/cad-br",
   "version": "0.1.0",
   "description": "A CLI for create boilerplate atomic design in React JS",
   "main": "src/index.js",
   "bin": {
-    "@bsjaramillo/create-project": "bin/create-project",
+    "@bsjaramillo/cad-br": "bin/create-project",
     "cad-br": "bin/create-project"
   },
   "publishConfig": {
@@ -35,8 +35,7 @@
   "devDependencies": {
     "eslint": "^7.10.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.1",
-    "yeoman-generator": "^4.12.0"
+    "eslint-plugin-import": "^2.22.1"
   },
   "dependencies": {
     "arg": "^4.1.3",
