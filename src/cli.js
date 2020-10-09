@@ -7,10 +7,8 @@ function parseArgumentIntoOptions(rawArgs) {
   const args = arg(
     {
       '--git': Boolean,
-      '--yes': Boolean,
       '--install': Boolean,
       '-g': '--git',
-      '-y': '--yes',
       '-i': '--install',
     },
     {
@@ -18,36 +16,14 @@ function parseArgumentIntoOptions(rawArgs) {
     },
   );
   return {
-    // skipPrompts: args['--yes'] || false,
     git: args['--git'] || false,
     name: args._[0],
-    runInstall: args['--install'] || true,
+    runInstall: args['--install'] || false,
   };
 }
 async function promptForMissingOptions(options) {
   const defaultName = 'atomic-project';
-  // if (options.skipPrompts) {
-  // return {
-  // ...options,
-  // template: options.template || defaultTemplate,
-  // };
-  // }
-
   const questions = [];
-  questions.push({
-    type: 'list',
-    name: 'template',
-    message: 'Please choose which project template to use',
-    choices: ['JavaScript', 'TypeScript'],
-    default: 'JavaScript',
-  });
-
-  questions.push({
-    type: 'confirm',
-    name: 'git',
-    message: 'Initialize a git repository?',
-    default: false,
-  });
   if (!options.name) {
     questions.push({
       type: 'input',
@@ -56,11 +32,27 @@ async function promptForMissingOptions(options) {
       default: defaultName,
     });
   }
+  questions.push({
+    type: 'list',
+    name: 'template',
+    message: 'Please choose which project template to use',
+    choices: ['JavaScript', 'TypeScript'],
+    default: 'JavaScript',
+  });
+  if (!options.git) {
+    questions.push({
+      type: 'confirm',
+      name: 'git',
+      message: 'Initialize a git repository?',
+      default: false,
+    });
+  }
   const answers = await inquirer.prompt(questions);
   return {
     ...options,
     template: answers.template,
-    name: options.name || answers.name,
+    runInstall: options.runInstall,
+    name: options.name || answers.projectName,
     git: options.git || answers.git,
   };
 }
