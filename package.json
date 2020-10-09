@@ -1,0 +1,50 @@
+{
+  "name": "@bsjaramillo/create-project",
+  "version": "1.0.0",
+  "description": "A CLI for create boilerplate atomic design in React JS",
+  "main": "src/index.js",
+  "bin": {
+    "@bsjaramillo/create-project": "bin/create-project",
+    "c-ad-b": "bin/create-project"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "templates/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bsjaramillo/atomic-design-react-boilerplate.git"
+  },
+  "keywords": [
+    "cli",
+    "atomic-design"
+  ],
+  "author": "bsjaramillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bsjaramillo/atomic-design-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/bsjaramillo/atomic-design-react-boilerplate#readme",
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "dependencies": {
+    "arg": "^4.1.3",
+    "chalk": "^4.1.0",
+    "esm": "^3.2.25",
+    "execa": "^4.0.3",
+    "inquirer": "^7.3.3",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^1.0.0"
+  }
+}
