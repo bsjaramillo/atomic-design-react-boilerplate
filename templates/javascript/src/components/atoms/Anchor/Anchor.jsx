@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-require('./_style.scss');
+require('./_style.scss')
 
 const Anchor = props => (
   <a className="a__anchor">{props.text}</a>
-);
+)
 
 Anchor.propTypes = {
-  text: React.PropTypes.string.isRequired,
-};
+  text: React.PropTypes.string.isRequired
+}
 
-export default Anchor;
+export default Anchor
