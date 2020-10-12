@@ -1,6 +1,6 @@
 {
   "name": "@bsjaramillo/cad-br",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A CLI for create boilerplate atomic design in React JS",
   "main": "src/index.js",
   "bin": {
